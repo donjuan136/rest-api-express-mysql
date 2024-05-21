@@ -1,0 +1,36 @@
+Section 1
+    Setup Project
+        npm init
+        npx express-generator
+        npm install -g express-generator
+        npm install
+
+    setup Github
+        git init
+        git config user.name username/donjuan136
+        git config user.email email/junker6.jd@gmail.com
+        echo "# rest-api-express-mysql" >> README.md
+        git init
+        git add README.md
+        git add .
+        git commit -m "first commit"
+        git branch -M main
+        git remote add origin https://github.com/donjuan136/rest-api-express-mysql.git
+        git push -u origin main
+
+    run command
+        npm start
+    
+
+Section2 Routing & Nodemon
+    Routing
+    pergi ke folder routes/users.js ganti respone tersebut lalu akses http://localhost:3000/users jika berhasil, akan menampilkan data.
+    buat 2 routing baru yaitu 1 routes di index.js & 1 routes diusers.js
+
+    Nodemon
+    npm i nodemon
+    npm install -g nodemon # or using yarn: yarn global add nodemon
+    npm install --save-dev nodemon # or using yarn: yarn add nodemon -D
+
+    Run Nodemon
+    nodemon bin/www

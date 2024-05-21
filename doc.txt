@@ -1,0 +1,38 @@
+Section 1
+    Requirement
+        basic javascript + nodeJS
+        basic databases mysql
+        install nodeJS
+        install https://expressjs.com/
+
+    Express generator adalah sebuah tools untuk mengenerate kerangka aplikasi express secara mudah
+    di express js struktur foldernya sesuka kita untuk mengaturnya dan tidak terlalu diatur
+
+    setup github https://www.gitkraken.com/learn/git/git-config
+    https://nulab.com/learn/software-development/git-tutorial/git-commands-settings/git-config-commands/
+    
+
+Section2 
+    membuat routing sederhana menggunakan expressjs
+
+    http://localhost:3000/users
+    Tambahkan routes baru 
+    router.get('/profile', (req, res, next)=>{
+    res.send(200)
+    })
+    lalu akses ke http://localhost:3000/users/profile
+
+    catatan ketika membuat route ada 3 parameter untuk parameter next sebagai middleware
+    router.get('/', function(req, res, next) {
+    });
+
+    kemudian buat routing baru di routes/users.js
+    //membuat response menggunakan JSON dan arrow function
+    router.get('/json', (req,res)=>{
+    res.json({
+        message: 'Hai nama saya adalah juan daniel'
+    })
+    })
+
+    Install Nodemon
+    Nodemon digunakan untuk autoreload/auto refresh ketika menjalankan aplikasi di terminal
