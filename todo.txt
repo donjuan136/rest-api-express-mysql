@@ -18,6 +18,15 @@ Section 1
         git remote add origin https://github.com/donjuan136/rest-api-express-mysql.git
         git push -u origin main
 
+        other command git
+            git status
+            git branch
+            git pull
+            git remote show origin
+            git checkout master
+            git merge develop
+            git push             
+
     run command
         npm start
     
