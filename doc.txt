@@ -10,7 +10,8 @@ Section 1
 
     setup github https://www.gitkraken.com/learn/git/git-config
     https://nulab.com/learn/software-development/git-tutorial/git-commands-settings/git-config-commands/
-    
+
+    jadi sebelum kita push ke github wajib git add dan git commit agar bisa dipush
 
 Section2 
     membuat routing sederhana menggunakan expressjs
