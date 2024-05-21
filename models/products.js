@@ -1,4 +1,4 @@
-
+//arrow function
 module.exports = (sequelize,DataTypes) =>{
     const Product = sequelize.define('Product',{
         id: {
@@ -30,5 +30,5 @@ module.exports = (sequelize,DataTypes) =>{
                 tableName: 'products'   
             });
             return Product
-
+//tablename merupakan konfigurasi tambahan dari namatable diwebserver
 }

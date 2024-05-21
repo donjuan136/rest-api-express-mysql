@@ -173,5 +173,40 @@ section 5 migration
 
 section 6 setup model
     fungsi model disini adalah untuk mengkoneksikan/menghubungkan dengan table yang kita buat
-    cara manual dengan cara buat file baru bernama products di dalam folder models
+    cara manual dengan cara buat file baru bernama products di dalam folder models copy file ini
+    'Prodcut' merupakan nama dari modelnya
+    //tablename merupakan konfigurasi tambahan dari namatable dari database
+        module.exports = (sequelize,DataTypes) =>{
+        const Product = sequelize.define('Product',{
+            id: {
+                type: DataTypes.INTEGER,
+                primaryKey: true,
+                autoIncrement: true,
+                allowNull:true,
+            },
+                name:{
+                type: DataTypes.STRING,
+                allowNull:false,
+                }, 
+                brand:{
+                type: DataTypes.STRING,
+                allowNull:false,
+                },
+                description:{
+                type: DataTypes.TEXT,
+                },
+                createdAt:{
+                type: DataTypes.DATE,
+                allowNull: false,
+                },
+                updateAt:{
+                type: DataTypes.DATE,
+                allowNull: false,
+                }},
+                {
+                    tableName: 'products'   
+                });
+                return Product
+
+                }
 
