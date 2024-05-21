@@ -37,3 +37,10 @@ Section2
 
     Install Nodemon
     Nodemon digunakan untuk autoreload/auto refresh ketika menjalankan aplikasi di terminal
+
+section 3 setup env 
+    https://www.npmjs.com/package/dotenv
+    https://www.bill.web.id/2017/03/mengapa-env-file-laravel-tidak.html
+    dotenv digunakan sebagai environment variable modul untuk loads semua file kedalam proccess.env
+    dan dotenv ini terletak di variable .env
+    cara memanggil variabel .env yaitu proccess.env_namaVariable

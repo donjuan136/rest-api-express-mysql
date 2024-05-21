@@ -43,3 +43,9 @@ Section2 Routing & Nodemon
 
     Run Nodemon
     nodemon bin/www
+
+Section 3 setup dontenv
+    npm i dontenv --save
+    kemudian copy require('dotenv').config() paste ke file app.js paling atas
+    create new file .env dibase dir yaitu .env
+
