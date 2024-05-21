@@ -171,3 +171,7 @@ section 5 migration
     untuk table product hasil dari migration yang telah dibuat 
     dan table sequelizemeta adalah sebuah histori dari migrations yang setiap dijalankan
 
+section 6 setup model
+    fungsi model disini adalah untuk mengkoneksikan/menghubungkan dengan table yang kita buat
+    cara manual dengan cara buat file baru bernama products di dalam folder models
+

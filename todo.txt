@@ -64,3 +64,5 @@ section 5 migration
         npx sequelize migration:create --name create-products-table #membuat table products
         npx sequelize db:migrate #migration
         npx sequlieze db:migrate:undo #menghapus table / rollback
+
+section 6 setup model
