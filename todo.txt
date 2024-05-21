@@ -49,3 +49,11 @@ Section 3 setup dontenv
     kemudian copy require('dotenv').config() paste ke file app.js paling atas
     create new file .env dibase dir yaitu .env
 
+Section 4 setup Sequelize
+    npm i --save sequelize sequelize-cli
+    npx sequelize
+    npx sequelize init 
+
+    setup config.json
+    didalamnya terdapat beberapa config databases, karena ditulis sebagai hard code tidak baik untuk disimpan didalam config.json
+    cara yang terbaik dengan memindahkan isi variable dari config.json ke dalam variable .env
