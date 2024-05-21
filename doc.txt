@@ -105,3 +105,69 @@ Section 4 setup Sequelize
             const config = require(__dirname + '/../config/config')[env];
         selesai sudah konfigurasi sequelize 
 
+section 5 migration
+    migration merupakan sebuah teknik membuat CRUD struktur table menggunakan ORM
+    'sequelize migration:generate' ataupun menggunakan alias 'sequelize db:create'
+    kemudian jalankan perintah sebagai berikut 
+        npx sequelize migration:create --name create-products-table #membuat table products
+        setelah berhasil migrations kita ubah file dialam folder migrations dan ini merupakan hasil dari migrations 
+         #before
+            /** @type {import('sequelize-cli').Migration} */
+            module.exports = {
+            async up (queryInterface, Sequelize) {
+                /**
+                * Add altering commands here.
+                *
+                * Example:
+                * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
+                */
+            },
+        #after
+                module.exports = {
+                async up (queryInterface, Sequelize) {
+                    await queryInterface.createTable('products',{ 
+                    id: Sequelize.INTEGER,
+                    type: Sequelize.INTEGER,
+                    primaryKey: true,
+                    autoIncrement: true,
+                    allowNull: false
+                    },
+                    {
+                    name:{
+                        type: Sequelize.STRING,
+                        allowNull:false,
+                    }, 
+                    brand:{
+                        type: Sequelize.STRING,
+                        allowNull:false,
+                    },
+                    description:{
+                        type: Sequelize.TEXT,
+                    },
+                    createdAt:{
+                        type: Sequelize.DATE,
+                        allowNull: false,
+                    },
+                    createdAt:{
+                        type: Sequelize.DATE,
+                        allowNull: false,
+                    },
+                    }
+
+                    );
+                },
+    setelah melakukan configurasi di folder migrations mari jalankan perintah berikut
+    npx sequelize db:migrate
+        ERROR: Please install mysql2 package manually lalu install package mysql2 dengan perintah
+        npm i mysql2 --save
+        kemudian jalankan kembali
+
+
+    Catatan:
+    kita perlu membuat createdAt dan updateAt untuk memberitahukan kita kapan data ini dibuat dan diupdate
+    ketika menjalankan perintah db migrations perintah 'async up' lah yang dijalankan 
+    dan ketika menjalankan perintah migration rollback perintah  'async down' lah yang dijalankan
+    setelah selesai dijalankan terdapat struktur table product dan table sequelizemeta
+    untuk table product hasil dari migration yang telah dibuat 
+    dan table sequelizemeta adalah sebuah histori dari migrations yang setiap dijalankan
+

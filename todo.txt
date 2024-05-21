@@ -57,3 +57,10 @@ Section 4 setup Sequelize
     setup config.json
     didalamnya terdapat beberapa config databases, karena ditulis sebagai hard code tidak baik untuk disimpan didalam config.json
     cara yang terbaik dengan memindahkan isi variable dari config.json ke dalam variable .env
+
+section 5 migration
+    'sequelize migration:generate' ataupun menggunakan alias 'sequelize db:create'
+    run command
+        npx sequelize migration:create --name create-products-table #membuat table products
+        npx sequelize db:migrate #migration
+        npx sequlieze db:migrate:undo #menghapus table / rollback
