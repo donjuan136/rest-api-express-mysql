@@ -275,3 +275,6 @@ section 7 Create API
     jadi tidak boleh menggunakan return product; ganti dnegan
         res.json(product);
     masih error dimenit 46 https://www.youtube.com/watch?v=_PVuqFBqPdo
+    
+    catatan
+     ika respone dari data itu null tidak boleh lebih baik dikirim berbentuk object
