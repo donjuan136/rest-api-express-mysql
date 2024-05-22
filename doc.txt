@@ -209,4 +209,69 @@ section 6 setup model
                 return Product
 
                 }
+section 7 Create API               
+    copy file berikut ini kedalam file routes/products.js
+        var express = require('express');
+        var router = express.Router();
 
+        router.post('/',async(req,res,next) =>{
+            res.send("ini adalah POST")
+        })
+
+        module.exports = router;
+    kemudian pergi ke app.js tambahkan
+        var productsRouter = require('./routes/products');
+        app.use('/products',productsRouter)
+
+    setelah itu kita buat sebuah validation yang berguna untuk validasi data yang dikirimkan dari frontend ke backend
+    kita gunakan library https://www.npmjs.com/package/fastest-validator fastest-validator
+    setelah install kita definisikan schema validasinya  di dalam router.post (products.js)
+                var express = require('express');
+                var router = express.Router();
+
+                const Validator = require('fastest-validator');
+                const v = new Validator();
+
+                router.post('/',async(req,res,next) =>{
+                    const schema ={
+                        name:'string',
+                        brand:'string',
+                        description:'string|optional',
+                    }
+                    const validate = v.validate(req.body, schema);
+                    if (validate.length){
+                        return res.
+                        status(400).
+                        json(validate);
+                    }
+                    res.send('ok')
+                });
+
+                module.exports = router;
+
+    setelah membuat validasi pergi ke postman lakukan post ke body request json dan masukan data ini {} terus send, setelah itu masukan script ini untuk menambahkannya.
+    {
+    "name": "baju",
+    "brand": "uniqlo",
+    "description": "ini adalah baju yang mahal dari brand tanah merah"
+    }
+    data berhasil dimasukan respone 'ok'
+    jika kita ubah name: menjadi integer akan error hasilnya seperti ini
+    [
+        {
+            "type": "string",
+            "message": "The 'name' field must be a string.",
+            "field": "name",
+            "actual": 13
+        }
+    ]
+    setelah berhasil menambahkan data api kita akan memasukannya ke dalam database dengan cara sebagai berikut:
+    memanggil model nya terlebih dahulu didalam file models
+        const {Products} = require('../models')
+    setelah kita panggil model product kita bisa tambahkan menjadi scripts berikut:
+        const product = await Product.create(req.body);
+        return product;
+    pas kita kirim data terjadi request terus menerus tidak berhenti karena tidak mereturn sebuah response apapun menggunakan express js
+    jadi tidak boleh menggunakan return product; ganti dnegan
+        res.json(product);
+    masih error dimenit 46 https://www.youtube.com/watch?v=_PVuqFBqPdo

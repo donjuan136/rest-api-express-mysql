@@ -5,7 +5,7 @@ module.exports = (sequelize,DataTypes) =>{
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
-            allowNull:true,
+            allowNull:false,
           },
             name:{
               type: DataTypes.STRING,
@@ -20,11 +20,11 @@ module.exports = (sequelize,DataTypes) =>{
             },
             createdAt:{
               type: DataTypes.DATE,
-              allowNull: false,
+              allowNull:false,
             },
             updateAt:{
               type: DataTypes.DATE,
-              allowNull: false,
+              allowNull:false,
             }},
             {
                 tableName: 'products'   

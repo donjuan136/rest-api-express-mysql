@@ -66,3 +66,43 @@ section 5 migration
         npx sequlieze db:migrate:undo #menghapus table / rollback
 
 section 6 setup model
+    buat file baru didalam folder models dan tambahkan scripts berikut:
+    module.exports = (sequelize,DataTypes) =>{
+        const Product = sequelize.define('Product',{
+            id: {
+                type: DataTypes.INTEGER,
+                primaryKey: true,
+                autoIncrement: true,
+                allowNull:true,
+            },
+                name:{
+                type: DataTypes.STRING,
+                allowNull:false,
+                }, 
+                brand:{
+                type: DataTypes.STRING,
+                allowNull:false,
+                },
+                description:{
+                type: DataTypes.TEXT,
+                },
+                createdAt:{
+                type: DataTypes.DATE,
+                allowNull: false,
+                },
+                updateAt:{
+                type: DataTypes.DATE,
+                allowNull: false,
+                }},
+                {
+                    tableName: 'products'   
+                });
+                return Product
+
+                }
+
+section 7 Create API
+    membuat route terlebih dahulu didalam folder routes tambahkan products.js
+    kemudian liat di doc.txt section 7
+    npm i fastest-validator --save
+    
